@@ -1,4 +1,7 @@
 import React from 'react';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import fbConnection from '../helpers/data/connection';
 
 import Auth from '../components/Auth/Auth';
 import MyNavbar from '../components/MyNavbar/MyNabar';
@@ -6,9 +9,25 @@ import Team from '../components/Team/Team';
 
 import './App.scss';
 
+fbConnection();
+
 class App extends React.Component {
   state = {
     authed: false,
+  }
+
+  componentDidMount() {
+    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ authed: true });
+      } else {
+        this.setState({ authed: false });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this.removeListener();
   }
 
   render() {
@@ -26,8 +45,8 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <MyNavbar />
-      <h2><i class="fas fa-quidditch"></i></h2>
+        <MyNavbar authed={authed}/>
+      <h2><i className="fas fa-quidditch"></i></h2>
       {loadComponent()}
     </div>
     );
