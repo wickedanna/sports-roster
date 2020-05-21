@@ -6,7 +6,9 @@ class MyNavbar extends React.Component {
   render() {
     return (
       <div className="MyNavbar">
-        <h1>I'm the Navbar</h1>
+        <nav class="navbar navbar-light bg-light">
+           <span class="navbar-brand mb-0 h1">Holyhead Harpies</span>
+        </nav>
       </div>
     );
   }

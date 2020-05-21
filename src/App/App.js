@@ -27,7 +27,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <MyNavbar />
-      <h2>Team Name</h2>
+      <h2><i class="fas fa-quidditch"></i></h2>
       {loadComponent()}
     </div>
     );
