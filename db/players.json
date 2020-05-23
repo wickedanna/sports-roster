@@ -1,0 +1,86 @@
+{
+  "player1": {
+    "name": "Ginny Weasley",
+    "imageUrl": "https://i.pinimg.com/originals/4a/6c/0b/4a6c0be21a5a80cd1f0c59ede6446edd.jpg",
+    "position": "Chaser",
+    "uid": "LRRKOTkZfnbwy0d1T0vVgfXxzG72"
+  },
+  "player2": {
+    "name": "Samantha Grant",
+    "imageUrl": "https://gomulions.com/images/2019/8/27/WomensSoccer_Fall2019_Headshots_19.jpg",
+    "position": "Chaser",
+    "uid": "LRRKOTkZfnbwy0d1T0vVgfXxzG72"
+  },
+  "player3": {
+    "name": "Prisila Gaines",
+    "imageUrl": "https://gomulions.com/images/2019/8/27/WomensSoccer_Fall2019_Headshots_9.jpg?width=300",
+    "position": "Keeper",
+    "uid": "LRRKOTkZfnbwy0d1T0vVgfXxzG72"
+  },
+  "player4": {
+    "name": "Giovanna Lang",
+    "imageUrl": "https://gomulions.com/images/2019/8/27/WomensSoccer_Fall2019_Headshots_18.jpg",
+    "position": "Chaser",
+    "uid": "LRRKOTkZfnbwy0d1T0vVgfXxzG72"
+  },
+  "player5": {
+    "name": "Gwenog Jones",
+    "imageUrl": "https://gomulions.com/images/2019/8/27/WomensSoccer_Fall2019_Headshots_2.jpg",
+    "position": "Beater",
+    "uid": "LRRKOTkZfnbwy0d1T0vVgfXxzG72"
+  },
+  "player6": {
+    "name": "Cory Gurrey",
+    "imageUrl": "https://gomulions.com/images/2019/8/27/WomensSoccer_Fall2019_Headshots_13.jpg?width=300",
+    "position": "Beater",
+    "uid": "LRRKOTkZfnbwy0d1T0vVgfXxzG72"
+  },
+  "player7": {
+    "name": "Gwendolyn Harper",
+    "imageUrl": "https://gomulions.com/images/2019/8/27/WomensSoccer_Fall2019_Headshots_7.jpg",
+    "position": "Seeker",
+    "uid": "LRRKOTkZfnbwy0d1T0vVgfXxzG72"
+  },
+  "player8": {
+    "name": "Ginny Weasley",
+    "imageUrl": "https://i.pinimg.com/originals/4a/6c/0b/4a6c0be21a5a80cd1f0c59ede6446edd.jpg",
+    "position": "Chaser",
+    "uid": "12345"
+  },
+  "player9": {
+    "name": "Samantha Grant",
+    "imageUrl": "https://gomulions.com/images/2019/8/27/WomensSoccer_Fall2019_Headshots_19.jpg",
+    "position": "Chaser",
+    "uid": "12345"
+  },
+  "player10": {
+    "name": "Prisila Gaines",
+    "imageUrl": "https://gomulions.com/images/2019/8/27/WomensSoccer_Fall2019_Headshots_9.jpg?width=300",
+    "position": "Keeper",
+    "uid": "12345"
+  },
+  "player11": {
+    "name": "Giovanna Lang",
+    "imageUrl": "https://gomulions.com/images/2019/8/27/WomensSoccer_Fall2019_Headshots_18.jpg",
+    "position": "Chaser",
+    "uid": "12345"
+  },
+  "player12": {
+    "name": "Gwenog Jones",
+    "imageUrl": "https://gomulions.com/images/2019/8/27/WomensSoccer_Fall2019_Headshots_2.jpg",
+    "position": "Beater",
+    "uid": "12345"
+  },
+  "player13": {
+    "name": "Cory Gurrey",
+    "imageUrl": "https://gomulions.com/images/2019/8/27/WomensSoccer_Fall2019_Headshots_13.jpg?width=300",
+    "position": "Beater",
+    "uid": "12345"
+  },
+  "player14": {
+    "name": "Gwendolyn Harper",
+    "imageUrl": "https://gomulions.com/images/2019/8/27/WomensSoccer_Fall2019_Headshots_7.jpg",
+    "position": "Seeker",
+    "uid": "12345"
+  }
+}
