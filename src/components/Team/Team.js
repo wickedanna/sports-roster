@@ -12,6 +12,7 @@ class Team extends React.Component {
   state = {
     players: [],
     formOpen: false,
+    editPlayer: {},
   }
 
   getInfo = () => {
@@ -39,16 +40,29 @@ class Team extends React.Component {
       .catch((err) => console.error('could not save player', err));
   }
 
-  render() {
-    const { players, formOpen } = this.state;
+  editAPlayer = (player) => {
+    this.setState({ formOpen: true, editPlayer: player });
+  }
 
-    const makePlayers = players.map((player) => <Players key={player.id} player={player} removePlayer={this.removePlayer}/>);
+  putPlayer = (playerId, updatedPlayer) => {
+    playerData.updatePlayer(playerId, updatedPlayer)
+      .then(() => {
+        this.getInfo();
+        this.setState({ formOpen: false, editPlayer: {} });
+      })
+      .catch((err) => console.error('could not update the player', err));
+  }
+
+  render() {
+    const { players, formOpen, editPlayer } = this.state;
+
+    const makePlayers = players.map((player) => <Players key={player.id} player={player} editAPlayer={this.editAPlayer} removePlayer={this.removePlayer}/>);
 
     return (
       <div className="Team">
         <h1>Welcome to the Holyhead Harpies Roster</h1>
         <button className="btn btn-dark" onClick={() => this.setState({ formOpen: true })}><i className="fas fa-plus"></i></button>
-        { formOpen ? <PlayerForm saveNewPlayer={this.saveNewPlayer}/> : '' }
+        { formOpen ? <PlayerForm saveNewPlayer={this.saveNewPlayer} player={editPlayer} putPlayer={this.putPlayer}/> : '' }
         <div className="holyhead-harpies d-flex flex-wrap">
         {makePlayers}
         </div>

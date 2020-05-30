@@ -8,12 +8,27 @@ import './PlayerForm.scss';
 class PlayerForm extends React.Component {
   static propTypes = {
     saveNewPlayer: PropTypes.func.isRequired,
+    putPlayer: PropTypes.func.isRequired,
+    player: PropTypes.object.isRequired,
   }
 
   state = {
     playerName: '',
     playerImage: '',
     playerPosition: '',
+    isEditing: false,
+  }
+
+  componentDidMount() {
+    const { player } = this.props;
+    if (player.name) {
+      this.setState({
+        playerName: player.name,
+        playerImage: player.imageUrl,
+        playerPosition: player.position,
+        isEditing: true,
+      });
+    }
   }
 
   nameChange = (e) => {
@@ -44,8 +59,26 @@ class PlayerForm extends React.Component {
     saveNewPlayer(newPlayer);
   }
 
+  updatePlayer = (e) => {
+    e.preventDefault();
+    const { player, putPlayer } = this.props;
+    const { playerName, playerPosition, playerImage } = this.state;
+    const updatedPlayer = {
+      name: playerName,
+      position: playerPosition,
+      imageUrl: playerImage,
+      uid: authData.getUid(),
+    };
+    putPlayer(player.id, updatedPlayer);
+  }
+
   render() {
-    const { playerName, playerImage, playerPosition } = this.state;
+    const {
+      playerName,
+      playerImage,
+      playerPosition,
+      isEditing,
+    } = this.state;
 
     return (
       <div className="PlayerForm">
@@ -80,7 +113,11 @@ class PlayerForm extends React.Component {
             value={playerImage}
             onChange={this.imageChange}/>
         </div>
-        <button type="submit" className="btn btn-dark" onClick={this.savePlayer}>Save Player</button>
+        {
+          isEditing
+            ? <button type="submit" className="btn btn-dark" onClick={this.updatePlayer}>Update Player</button>
+            : <button type="submit" className="btn btn-dark" onClick={this.savePlayer}>Save Player</button>
+        }
       </form>
       </div>
     );
