@@ -22,6 +22,13 @@ const getPlayersByUid = (uid) => new Promise((resolve, reject) => {
 
 const savePlayer = (newPlayer) => axios.post(`${baseUrl}/players.json`, newPlayer);
 
+const updatePlayer = (playerId, updatedPlayer) => axios.put(`${baseUrl}/players/${playerId}.json`, updatedPlayer);
+
 const deletePlayer = (playerId) => axios.delete(`${baseUrl}/players/${playerId}.json`);
 
-export default { getPlayersByUid, deletePlayer, savePlayer };
+export default {
+  getPlayersByUid,
+  deletePlayer,
+  savePlayer,
+  updatePlayer,
+};
